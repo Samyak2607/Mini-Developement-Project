@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+	
+	{% block title %}{{ user.username }}{% endblock %}
+
+	{% block content %}
+
+		<h1>Welcome {{ user.username }}</h1><br>
+		
+			<a href="{% url 'short_url' %}">URL Shortner</a><br>
+			<a href="{% url 'todo_url' %}">ToDo-list</a><br>
+			
+			<a href="{% url 'document_update_url' %}">Upload Library</a><br>
+			<a href="{% url 'document_list_url' %}">My Library</a><br>
+			<a href="{% url 'chat_url' %}">Chat</a>
+			<br><br><br>
+			<a href="{% url 'base_url' %}">Go to home page</a><br>
+
+
+
+	{% endblock %}

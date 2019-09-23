@@ -10,3 +10,4 @@ class shortner:
 		str_token = string.ascii_letters
 		return ''.join(random.choice(str_token) for i in range(self.token_size))
 	
+	  

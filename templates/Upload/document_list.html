@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+	{% block title %} Library Shell {% endblock %}
+
+	{% block content %}
+
+		<h1>Library Shell</h1>
+		<a href="{% url 'document_update_url' %}" class="btn-primary">Upload Book</a>
+		<table class="w3-table">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Cover</th>
+					<th>Book</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				{% for docs in doc %}
+				<tr>
+					<td>{{ docs.title }}</td>
+					<td>{{ docs.author }}</td>
+					{% if docs.cover %}
+
+					<td>
+						<a href="{{ docs.cover.url }}" class="btn btn-primary btn-sm" target="_blank">Download </a>
+					</td>
+					
+					{% else %}
+					<td>
+						<span class="text-muted">No Cover </span>
+					</td>
+					{% endif%}
+					
+					<td>
+						<a href="{{ docs.document.url }}" class="btn btn-primary btn-sm" target="_blank">Download</a>
+					</td>
+				</tr>
+				{% endfor %}
+
+			</tbody>
+
+		</table>
+
+	{% endblock %}

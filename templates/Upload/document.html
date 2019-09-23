@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+	{% block title %} Update Library {% endblock %}
+	{% load crispy_forms_tags %}
+
+ 	{% block content %}
+ 		<h1>Update Your Library</h1>
+ 		<form method="POST" enctype="multipart/form-data">
+ 			{% csrf_token %}
+ 			{{ form|crispy }}
+ 			<button type = 'submit'>Upload Doc</button>
+ 		</form>
+ 	{% endblock%}

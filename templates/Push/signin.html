@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+	{% block title %}SignIn{% endblock %}
+
+	{% block content %}
+
+		<form action ='login_action' method = 'POST'>{% csrf_token %}
+			Email:
+			<input type="email" name="email">
+			password:
+			<input type="password" name="password">
+
+			<button>LogIn</button>
+		</form>
+
+	{% endblock%}

@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>URL Shortner</title>
-</head>
-<body>
+{% extends 'base.html' %}
+	{% block title %}
+
+		URL Shortner
+
+	{% endblock %}
+
+	{% block content %}
+
 	<form method = 'POST'>{% csrf_token %}
 		
 		{{ form.as_p }}
@@ -13,5 +16,5 @@
 	</form>
 	<h2>Shorten URL</h2>
 	<h1>{{ temp }}</h1>
-</body>
-</html>
+
+	{% endblock %}
